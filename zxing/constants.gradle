@@ -15,7 +15,7 @@
  */
 
 ext {
-    projectName = 'barcodescanner'
+    projectName = 'barcodescanner-zxing'
     projectDesc = 'Barcodescanner for Android'
 
     githubUrl = 'https://github.com/IzabellaConigliaro/barcodescanner'
