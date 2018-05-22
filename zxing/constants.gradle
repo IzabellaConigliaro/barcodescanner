@@ -15,14 +15,14 @@
  */
 
 ext {
-    projectName = 'barcodescanner-zxing'
+    projectName = 'barcodescanner'
     projectDesc = 'Barcodescanner for Android'
 
     githubUrl = 'https://github.com/IzabellaConigliaro/barcodescanner'
 
     mavenGroup = 'com.IzabellaConigliaro.barcodescanner'
     mavenArtifactId = 'zxing'
-    mavenVersion = '1.4'
+    mavenVersion = '1.6'
 
     bintrayOrg = 'Hotmart'
 }

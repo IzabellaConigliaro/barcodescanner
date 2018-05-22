@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile project(":core")
+    implementation project(":core")
     compileOnly "com.google.zxing:core:3.3.0"
 
 }
