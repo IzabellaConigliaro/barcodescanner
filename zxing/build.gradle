@@ -1,14 +1,28 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: 'maven.gradle'
+apply from: 'bintray.gradle'
 
-ext {
-    isLibrary = true
-    pomPackaging = "aar"
-    pomArtifactId = "zxing"
-    pomName = "ZXing Scanner View"
-    pomDescription = 'An android library project which contains the zxing barcode scanner view'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "$mavenVersion"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
 }
 
 dependencies {
     compile project(":core")
-    compile libraries.zxing_core
+    compileOnly "com.google.zxing:core:3.3.0"
+
 }

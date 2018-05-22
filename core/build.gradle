@@ -1,13 +1,26 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: 'maven.gradle'
+apply from: 'bintray.gradle'
 
-ext {
-    isLibrary = true
-    pomPackaging = "aar"
-    pomArtifactId = "core"
-    pomName = "Barcode Scanner View"
-    pomDescription = 'An android library project which contains the core barcode scanner view'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "$mavenVersion"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
 }
 
 dependencies {
-    compile libraries.support_v4
+    compileOnly "com.android.support:support-v4:25.3.1"
 }
